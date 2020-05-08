@@ -3,7 +3,7 @@
 """
 Created on Thu May  7 13:22:51 2020
 
-@author: ankesh
+@author: ankesh kedia_1MS17IS161
 """
 
 # Importing the libraries
@@ -46,6 +46,14 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 
 # Fitting the ANN to the Training set
 classifier.fit(X_train, y_train, batch_size = 10, nb_epoch = 50)
+
+for layer in classifier.layers:
+    learnt_wt=layer.get_weights()
+print("Learnt Weights of the layers")
+print(learnt_wt,end='\n')
+
+print("HyperParameters")
+print('No of epochs=50')
 
 
 # Predicting the Test set results
